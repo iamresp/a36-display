@@ -1,0 +1,10 @@
+[Unit]
+Description=CPU cooler display controller
+After=
+
+[Service]
+ExecStart=/usr/bin/a36-display
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

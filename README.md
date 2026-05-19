@@ -6,6 +6,13 @@ A simple utility to substitute ZALMAN-CTM app on Linux. Allows to display temper
 
 **Special thanks** to ZALMAN for permission to publish this program ❤️
 
+## Version history
+
+| Version | Date | Description |
+| --- | --- | --- |
+| 0.1.0 | 2025-09-17 | Initial release |
+| 0.1.1 | 2026-05-19 | Fix nullptr error |
+
 ## Compatible devices
 
 ### Definitely compatible

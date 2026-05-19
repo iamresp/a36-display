@@ -36,10 +36,12 @@ static volatile sig_atomic_t keep_running = 1;
 
 static void info(char *text) {
   fprintf(stdout, "a36-display: [info]  %s\n", text);
+  fflush(stdout);
 }
 
 static void err(char *text) {
   fprintf(stderr, "a36-display: [error] %s\n", text);
+  fflush(stderr);
 }
 
 static int init_usb_ctx(libusb_context **ctx) {
@@ -63,6 +65,7 @@ static int usb_device_open(libusb_context *ctx, libusb_device_handle **handle,
     *handle = libusb_open_device_with_vid_pid(ctx, I_VENDOR_ID, DEVICES[i]);
     if (*handle) {
       fprintf(stdout, "a36-display: [info]  Working with %x\n", DEVICES[i]);
+      fflush(stdout);
       return 0;
     }
   }

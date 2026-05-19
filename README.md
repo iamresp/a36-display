@@ -12,6 +12,7 @@ A simple utility to substitute ZALMAN-CTM app on Linux. Allows to display temper
 | --- | --- | --- |
 | 0.1.0 | 2025-09-17 | Initial release |
 | 0.1.1 | 2026-05-19 | Fix nullptr error |
+| 0.1.2 | 2026-05-19 | Fix journalctl logging |
 
 ## Compatible devices
 

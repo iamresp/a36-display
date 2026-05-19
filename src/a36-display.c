@@ -221,7 +221,7 @@ int main(int argc, char *argv[]) {
       if (!rc) {
         // Set-Idle request must be sent first, no data is required
         libusb_control_transfer(handle, I_IDLE_BM_REQUEST_TYPE, I_IDLE_REQUEST,
-                                0, 0x00, nullptr, 0, I_USB_TIMEOUT);
+                                0, 0x00, NULL, 0, I_USB_TIMEOUT);
 
         rc = find_temp_sensor(&chip, &subfeat_num, sensor_label);
 

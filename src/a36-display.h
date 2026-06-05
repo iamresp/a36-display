@@ -15,6 +15,7 @@
 // For idle request
 #define I_IDLE_BM_REQUEST_TYPE 0x21
 #define I_IDLE_REQUEST 0x0A
+#define I_DEFINITELY_SUPPORTED_DEVICES_COUNT 2
 
 #define ERR_LUSB_INIT -1
 #define ERR_LUSB_HANDLE -2

@@ -1,10 +1,8 @@
 # a36-display
 
-A simple utility to substitute ZALMAN-CTM app on Linux. Allows to display temperature value on screen of ALPHA 2 A36 liquid cooler. Should also be compatible with several other ZALMAN devices, but this requires testing yet.
+A simple utility to substitute ZALMAN-CTM app on Linux. Allows to display related temperature on screen of compatible ZALMAN devices (see below).
 
 **This software is not an official port of ZALMAN-CTM app and is unrelated to ZALMAN TECH CO., Ltd.** For details, see the Legal disclaimer section of this document.
-
-**Special thanks** to ZALMAN for permission to publish this program ❤️
 
 ## Version history
 
@@ -13,15 +11,16 @@ A simple utility to substitute ZALMAN-CTM app on Linux. Allows to display temper
 | 0.1.0 | 2025-09-17 | Initial release |
 | 0.1.1 | 2026-05-19 | Fix nullptr error |
 | 0.1.2 | 2026-05-19 | Fix journalctl logging |
+| 0.2.0 | 2026-06-04 | Mark CNPS13X DS as definitely compatible |
 
 ## Compatible devices
 
 ### Definitely compatible
 * ZALMAN ALPHA 2 A36
+* ZALMAN CNPS13X DS
 
 ### Should be compatible, requires testing
 * ZALMAN ALPHA 2 A24
-* ZALMAN CNPS13X DS
 
 ### Should be partially compatible, requires testing
 * ZALMAN CNPS9X ECO DS (will show only temperature)
@@ -77,6 +76,11 @@ If there are no errors in CLI and you see it working, go through the instruction
 ```
 ExecStart=/usr/bin/a36-display -n
 ```
+
+## Thanks ❤️
+
+- to [ZALMAN](https://www.zalman.com) for permission to publish this program
+- to [MrBrawler](https://github.com/MrBrawler) for confirming CNPS13X DS compatibility
 
 ## Legal disclaimer
 

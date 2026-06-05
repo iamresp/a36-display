@@ -28,8 +28,15 @@
 #include <string.h>
 #include <unistd.h>
 
-// Supported devices
-// Only first (ALPHA 2) is being checked by default without -n flag
+/**
+ * Supported devices
+ * Only first I_DEFINITELY_SUPPORTED_DEVICES_COUNT are being checked
+ * by default without -n flag, so order is important here
+ *
+ * 0x3ed1 - ALPHA 2 A36 (and probably A24)
+ * 0x4b8f - CNPS13X DS
+ * 0x3a7f - presumably CNPS9X ECO DS?
+ */
 static int DEVICES[3] = {0x3ed1, 0x4b8f, 0x3a7f};
 
 static volatile sig_atomic_t keep_running = 1;
@@ -58,8 +65,8 @@ static int init_usb_ctx(libusb_context **ctx) {
 static int usb_device_open(libusb_context *ctx, libusb_device_handle **handle,
                            int should_test_additional_hw) {
   // check only first device if no -n flag specified
-  int length =
-      should_test_additional_hw ? sizeof(DEVICES) / sizeof(DEVICES[0]) : 1;
+  int length = should_test_additional_hw ? sizeof(DEVICES) / sizeof(DEVICES[0])
+                                         : I_DEFINITELY_SUPPORTED_DEVICES_COUNT;
 
   for (int i = 0; i < length; i++) {
     *handle = libusb_open_device_with_vid_pid(ctx, I_VENDOR_ID, DEVICES[i]);
